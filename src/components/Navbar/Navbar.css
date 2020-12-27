@@ -1,0 +1,11 @@
+.navbar_brand {
+    height: 60px;
+    padding-left: 20px;
+}
+
+.active {
+    color: red;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 3px solid gray;
+}
