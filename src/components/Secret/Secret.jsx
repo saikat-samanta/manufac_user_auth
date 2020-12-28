@@ -32,7 +32,7 @@ function Secret() {
         <div className="secret">
             {hasCookie ? <Redirect to="/login" /> :
                 <div className="secret_items">
-                    <h1>Welcome back {user}</h1>
+                    <h1>Welcome <span style={{ color: "white" }}>{user}</span></h1>
                     <h4>Your account _id is: <span style={{ color: "white" }}>{id}</span></h4>
                 </div>
             }

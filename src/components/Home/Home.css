@@ -62,7 +62,7 @@
 }
 
 .container_left button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -91,6 +91,7 @@
         margin: 15px 5px 0 15px;
         height: 80%;
         width: 50%;
+        font-size: 2.5vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -98,6 +99,7 @@
 
     .container_left button {
         width: max-content;
+        margin-top: 20px;
         margin: 20px auto 0;
     }
 

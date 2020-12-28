@@ -8,7 +8,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Alert } from "@material-ui/lab";
 import bcrypt from "bcryptjs";
 
@@ -45,6 +45,7 @@ export default function Register() {
         message: "",
         state: false
     });
+    const [redirect, setRedirect] = useState(false);
 
     const handleChange = (ev) => {
         const { name, value } = ev.target;
@@ -81,6 +82,9 @@ export default function Register() {
                                     password: "",
                                     cpassword: ""
                                 });
+                                setTimeout(() => {
+                                    setRedirect(true);
+                                }, 2000);
                             } else {
                                 setResponseData({ message: `Something went wrong, Please try again`, state: false });
                             }
@@ -109,6 +113,7 @@ export default function Register() {
 
     return (
         <Container component="main" maxWidth="xs">
+            {redirect && <Redirect to="/login" />}
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -50,6 +50,13 @@ export default function Login() {
         message: "",
         state: false
     });
+    useEffect(() => {
+        if (isLogin) {
+            setTimeout(() => {
+                setRedirect(true);
+            }, 2000);
+        }
+    }, [isLogin]);
     function handleChange(ev) {
         const { name, value } = ev.target;
         setInputData(prevData => {
@@ -74,9 +81,6 @@ export default function Login() {
                                 email: "",
                                 password: ""
                             });
-                            setTimeout(() => {
-                                setRedirect(true);
-                            }, 2000);
                         } else {
                             setResponseData({ message: `Invalid Credentials`, state: false });
                         }

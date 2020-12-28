@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import Secret from './components/Secret/Secret';
 import Register from './components/Register/Register';
 import Cookies from "js-cookie";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 
 export const appState = createContext();
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route exact path="/register">
               <Register />
+            </Route>
+            <Route exact path="/forgot-password">
+              <ForgotPassword />
             </Route>
             <Route exact path="/login">
               <Login />
