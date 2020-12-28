@@ -1,26 +1,45 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+
 :root {
   --blue: #0e0620;
   --white: #fff;
-  --green: #2ccf6d;
+  --green: #150281;
 }
 
 button {
   font-family: "Nunito Sans";
 }
 
-svg {
-  width: 100%;
+.text_content h1 {
+  font-weight: bold;
+  font-size: 3rem;
 }
 
-.col-md-6 h1 {
-  font-size: 7.5em;
-  margin: 15px 0px;
-  font-weight: bold;
+.div_container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue);
 }
 
-h2 {
-  font-weight: bold;
+.img_content {
+  height: 50%;
+}
+
+.img_content svg {
+  height: 100%;
+}
+
+.text_content {
+  height: 50%;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .btn {
@@ -36,23 +55,26 @@ h2 {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   font-weight: bold;
-  margin: 5px 0px;
+  margin: 10px auto;
 }
 
 .btn.green {
   border: 4px solid var(--green);
-  color: var(--blue);
 }
+
 .link {
-    color: var(--green);
-    text-decoration: none !important;
+  color: var(--green);
+  text-decoration: none !important;
 }
+
 .link:hover {
-    color: var(--white);
+  color: var(--white);
 }
+
 .btn.green:hover .link {
-    color: var(--white);
+  color: var(--white);
 }
+
 .btn.green:before {
   content: "";
   position: absolute;
@@ -65,23 +87,37 @@ h2 {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
+
 .btn.green:hover {
   color: var(--white);
   background: var(--green);
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
+
 .btn.green:hover:before {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    display: block;
+@media screen and (min-width: 768px) {
+  .div_container {
+    flex-direction: row;
   }
 
-  .container {
-    margin-top: 70px;
-    margin-bottom: 70px;
+  .img_content {
+    height: 100%;
+    width: 50%;
+  }
+
+  .img_content svg {
+    width: 100%;
+  }
+
+  .text_content {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 }
